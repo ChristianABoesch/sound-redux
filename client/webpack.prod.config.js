@@ -31,7 +31,7 @@ module.exports = {
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve('dist/public/'),
+    path: path.resolve('dist/'),
   },
   resolve: {
     extensions: ['.js', '.jsx'],

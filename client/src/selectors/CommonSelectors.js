@@ -19,6 +19,7 @@ export const getIsMobile = createSelector(
 
 // playlists selectors
 export const getPlaylists = state => state.playlists;
+export const getAuth = state => state.firebase.auth;
 
 // player selectors
 export const getCurrentTime = state => state.player.currentTime;
@@ -77,14 +78,16 @@ export const getLikes = state => state.session.likes;
 export const getNewStreamSongs = state => state.session.newStreamSongs;
 export const getOauthToken = state => state.session.oauthToken;
 export const getSessionId = state => state.session.id;
-export const getSessionUser = createSelector(
-  getSessionId,
-  getEntities,
-  (id, entities) => (id in entities.users
-    ? entities.users[id]
-    : null
-  ),
-);
+// export const getSessionUser = createSelector(
+//   getSessionId,
+//   getEntities,
+//   (id, entities) => (id in entities.users
+//     ? entities.users[id]
+//     : null
+//   ),
+// );
+export const getSessionUser = state => state.firebase.auth;
+
 export const getIsAuthenticated = createSelector(
   getOauthToken,
   getSessionUser,

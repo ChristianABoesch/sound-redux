@@ -13,3 +13,10 @@ Uses [normalizr](https://github.com/gaearon/normalizr)
 3. visit `http://localhost:8080`
 
 Feedback, issues, etc. are more than welcome!
+
+
+To deploy on firebase
+
+1. `install firebase tools if not already installed by running npm i firebase-tools -g`
+2. `change project name in .firebaserc`
+3. `firebase deploy`

@@ -26,6 +26,8 @@ const propTypes = {
   showStream: PropTypes.bool.isRequired,
   streamFutureUrl: PropTypes.string.isRequired,
   user: PropTypes.shape({}),
+  auth: PropTypes.object.isRequired,
+  firebase: PropTypes.object.isRequired,
 };
 
 const Nav = ({
@@ -43,6 +45,8 @@ const Nav = ({
   showStream,
   streamFutureUrl,
   user,
+  auth,
+  firebase,
 }) => (
   <div className="nav">
     <div className="nav__inner container">
@@ -53,7 +57,7 @@ const Nav = ({
           navigateTo={navigateTo}
           path={SONGS_PATH}
         >
-          SoundRedux
+          MusicDrop
         </Link>
       </div>
       <div className="nav__section nav__section--session">
@@ -77,10 +81,11 @@ const Nav = ({
       <div className="nav__section nav__section--user">
         <NavUser
           isAuthenticated={isAuthenticated}
-          login={login}
-          logout={logout}
+          login={firebase.login}
+          logout={firebase.logout}
           showPlaylist={showPlaylist}
           user={user}
+          auth={auth}
         />
       </div>
     </div>

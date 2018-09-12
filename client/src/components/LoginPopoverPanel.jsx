@@ -8,7 +8,7 @@ const propTypes = {
 const LoginPopoverPanel = ({ login }) => (
   <div
     className="button button--orange button--block button--margin"
-    onClick={login}
+    onClick={() => login({ provider: 'google', type: 'popup' })}
     role="button"
     tabIndex="0"
   >

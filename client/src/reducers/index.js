@@ -6,6 +6,7 @@ import router from '../reducers/router';
 import player from '../reducers/player';
 import playlists from '../reducers/playlists';
 import session from '../reducers/session';
+import { firebaseReducer } from 'react-redux-firebase'
 
 const rootReducer = combineReducers({
   entities,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   playlists,
   router,
   session,
+  firebase: firebaseReducer,
 });
 
 export default rootReducer;
